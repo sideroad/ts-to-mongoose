@@ -12,6 +12,7 @@ export const Sample = {
   number: { type: Number },
   boolean: { type: Boolean },
   date: { type: Date },
+  object: { string: { type: String, required: true } },
   stringArray: [ { type: String } ],
   objectArray: [
     {
@@ -22,7 +23,7 @@ export const Sample = {
   enums: { enum: [ 'a', 'b' ], type: String },
   type: { type: String },
   required: { type: String, required: true },
-  id: { type: String, required: true, unique: true },
+  id: { type: String, unique: true, required: true },
   extended: { type: String }
 };
 "

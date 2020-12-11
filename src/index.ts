@@ -76,12 +76,6 @@ export default ({ file }: { file: string }): string | void => {
     if (object.$schema && typeof object.$schema === 'string') {
       delete object.$schema;
     }
-    if (object.required && object.required instanceof Array) {
-      object.required.forEach((key: string | number) => {
-        object.properties[key].required = true;
-      });
-      object.required = undefined;
-    }
     if (object.id && /#$/.test(object.id)) {
       delete object.id;
       object.unique = true;
@@ -91,6 +85,16 @@ export default ({ file }: { file: string }): string | void => {
         object[key] = replace(object[key]);
       }
     });
+    if (
+      object.required &&
+      object.required instanceof Array &&
+      object.properties
+    ) {
+      object.required.forEach((key: string | number) => {
+        object.properties[key].required = true;
+      });
+      object.required = undefined;
+    }
     return object;
   };
 

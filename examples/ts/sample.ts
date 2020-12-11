@@ -21,6 +21,9 @@ export interface Sample extends Extendee {
    * Complex values
    */
   date?: Date;
+  object: {
+    string: string;
+  };
   stringArray?: string[];
   objectArray?: Array<ArrayedObject>;
 

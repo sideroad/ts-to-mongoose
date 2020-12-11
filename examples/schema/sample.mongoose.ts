@@ -9,16 +9,17 @@ export const Sample = {
   number: { type: Number },
   boolean: { type: Boolean },
   date: { type: Date },
-  stringArray: [{ type: String }],
+  object: { string: { type: String, required: true } },
+  stringArray: [ { type: String } ],
   objectArray: [
     {
       a: { type: String },
       b: { type: Number }
     }
   ],
-  enums: { enum: ['a', 'b'], type: String },
+  enums: { enum: [ 'a', 'b' ], type: String },
   type: { type: String },
   required: { type: String, required: true },
-  id: { type: String, required: true, unique: true },
+  id: { type: String, unique: true, required: true },
   extended: { type: String }
 };
