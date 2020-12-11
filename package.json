@@ -1,13 +1,19 @@
 {
   "name": "ts-to-mongoose",
-  "version": "0.0.8",
-  "keywords": ["typescript", "convert", "mongoose", "schema"],
+  "version": "0.0.10",
+  "keywords": [
+    "typescript",
+    "convert",
+    "mongoose",
+    "schema"
+  ],
   "description": "typescript convert to mongoose schema",
   "main": "dist/index.js",
   "bin": {
     "ts-to-mongoose": "bin.js"
   },
   "scripts": {
+    "pub": "yarn lint:fix && yarn jest -u && yarn build && yarn publish .",
     "dev": "ts-node src/cli.ts -s examples/ts/*.ts -d examples/schema",
     "dev:watch": "ts-node-dev --respawn src/index.ts",
     "clean": "rimraf dist/*",
