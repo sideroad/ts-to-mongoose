@@ -50,7 +50,9 @@ exports.default = ({ file }) => {
         return object;
     };
     const items = (object) => {
-        if (object.type === 'array' && object.items && typeof object.items === 'object') {
+        if (object.type === 'array' &&
+            object.items &&
+            typeof object.items === 'object') {
             if (object.required) {
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 object.items.required = object.required;
@@ -65,7 +67,8 @@ exports.default = ({ file }) => {
         return object;
     };
     const replace = (object) => {
-        if (object.type === 'string' && (object.format === 'date-time' || object.format === 'date')) {
+        if (object.type === 'string' &&
+            (object.format === 'date-time' || object.format === 'date')) {
             object.type = Date;
             delete object.format;
         }
@@ -80,6 +83,9 @@ exports.default = ({ file }) => {
         }
         if (object.description && typeof object.description === 'string') {
             delete object.description;
+        }
+        if (object.$schema && typeof object.$schema === 'string') {
+            delete object.$schema;
         }
         if (object.required && object.required instanceof Array) {
             object.required.forEach((key) => {
@@ -102,12 +108,14 @@ exports.default = ({ file }) => {
     const generator = TJS.buildGenerator(program, settings);
     if (generator) {
         const symbols = generator.getMainFileSymbols(program);
-        return symbols.map((symbol) => {
+        return `${symbols
+            .map((symbol) => {
             const schema = generator.getSchemaForSymbol(symbol);
             return `export const ${symbol} = ${util_1.default
                 .inspect(items(properties(replace(schema))), false, null)
-                .replace(/\[Function: ([^\]]+)\]/g, '$1')}`;
-        }).join('\n\n');
+                .replace(/\[Function: ([^\]]+)\]/g, '$1')};`;
+        })
+            .join('\n\n')}\n`;
     }
     return;
 };

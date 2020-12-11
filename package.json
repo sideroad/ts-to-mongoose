@@ -1,11 +1,11 @@
 {
   "name": "ts-to-mongoose",
-  "version": "0.0.2",
+  "version": "0.0.8",
   "keywords": ["typescript", "convert", "mongoose", "schema"],
   "description": "typescript convert to mongoose schema",
   "main": "dist/index.js",
   "bin": {
-    "ts-to-mongoose": "dist/cli.js"
+    "ts-to-mongoose": "bin.js"
   },
   "scripts": {
     "dev": "ts-node src/cli.ts -s examples/ts/*.ts -d examples/schema",
