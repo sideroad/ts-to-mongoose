@@ -20,8 +20,13 @@ npm i --save-dev ts-to-mongoose
 # -s / --source: typescript file for mongoose schema definitions. You can specify glob pattern.
 # -d / --dist: directory to output mongoose schema definitions.
 npx ts-to-mongoose -s ${path_to_ts_file_source} -d ${dist_dir_path}
+```
 
-# For example
+# Example
+```
 npx ts-to-mongoose -s examples/ts/*.ts -d examples/schema
 ```
+[source - TypeScript](examples/ts/sample.ts)
+
+[dist - Generated Mongoose Schema](examples/schema/sample.mongoose.ts)
 
