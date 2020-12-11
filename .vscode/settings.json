@@ -1,0 +1,12 @@
+{
+    "eslint.validate": [
+      "javascript",
+      "typescript",
+    ],
+    "window.zoomLevel": 2,
+    "editor.tabSize": 2,
+    "workbench.tree.indent": 18,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  }
