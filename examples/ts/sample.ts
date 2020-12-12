@@ -39,7 +39,7 @@ export interface Sample extends Extendee {
 
   /**
    * If you want to ignore attribute
-   * @ignore false
+   * @ignore
    */
   shouldBeIgnored?: boolean;
 

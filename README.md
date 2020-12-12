@@ -24,7 +24,7 @@ npx ts-to-mongoose -s ${path_to_ts_file_source} -d ${dist_dir_path}
 
 # Example
 ```
-npx ts-to-mongoose -s examples/ts/*.ts -d examples/schema
+npx ts-to-mongoose -s examples/ts/**/*.ts -d examples/schema
 ```
 [source - TypeScript](examples/ts/sample.ts)
 
